@@ -13,24 +13,25 @@ export const Layout = (props) => {
         <div>
             <Header />
             {
-                props.sidebar?
-                <Container fluid>
-                <Row>
-                    <Col md = {2} className = 'sidebar'>
-                        <ul>
-                            <li><NavLink to = {`/`}>Home</NavLink></li>
-                            <li><NavLink to = {`/products`}>Products</NavLink></li>
-                            <li><NavLink to ={`/orders`}>Orders</NavLink></li>
-                            <li><NavLink to ={`/categories`}>Category</NavLink></li>
-                        </ul>
-                        </Col>
-                    <Col md = {10} style = {{marginLeft: 'auto', paddingTop: '60px'}}>
-                    {props.children}
-                        </Col>
-                </Row>
-                </Container>
-                :
-                props.children
+                props.sidebar ?
+                    <Container fluid>
+                        <Row>
+                            <Col md={2} className='sidebar'>
+                                <ul>
+                                    <li><NavLink exact to={`/`}>Home</NavLink></li>
+                                    <li><NavLink to={`/page`}>Page</NavLink></li>
+                                    <li><NavLink to={`/products`}>Products</NavLink></li>
+                                    <li><NavLink to={`/orders`}>Orders</NavLink></li>
+                                    <li><NavLink to={`/categories`}>Category</NavLink></li>
+                                </ul>
+                            </Col>
+                            <Col md={10} style={{ marginLeft: 'auto', paddingTop: '60px' }}>
+                                {props.children}
+                            </Col>
+                        </Row>
+                    </Container>
+                    :
+                    props.children
             }
         </div>
     )

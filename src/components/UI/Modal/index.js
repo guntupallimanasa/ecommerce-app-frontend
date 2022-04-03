@@ -18,6 +18,13 @@ export const NewModal = (props) => {
         {props.children}
         </Modal.Body>
         <Modal.Footer>
+          {
+            props.buttons && props.buttons.map((btn,index)=>
+              <Button key = {index} variant={btn.color} onClick={btn.onClick}>
+              {btn.label}
+            </Button>
+            )
+            }
           <Button variant="Primary" onClick={props.handleClose}>
             Save
           </Button>

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Products } from './containers/products';
 import { Orders } from './containers/orders';
 import { Category } from './containers/Category';
+import { Page } from './containers/Page';
 
 function App(){
   const dispatch = useDispatch();
@@ -19,14 +20,17 @@ function App(){
     if (!auth.authReducer.authenticate) {
       dispatch(isUserLogin());
     }
-    dispatch(getInitialData())
+    if (auth.authReducer.authenticate) {
+      dispatch(getInitialData())
+    }
 
-  }, [])
+  }, [auth.authReducer.authenticate])
 
   return (
     <div className="App">
       <Switch>
         <PrivateRoute path="/" exact component={Home} />
+        <PrivateRoute path="/page" component={Page} />
         <PrivateRoute path="/products" component={Products} />
         <PrivateRoute path="/orders" component={Orders} />
         <PrivateRoute path="/categories" component={Category} />

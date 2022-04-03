@@ -10,7 +10,9 @@ export const Input = (props) => {
     return (
         <div>
             <div class="form-group" >
-                <label for="exampleInputEmail1">{props.label}</label>
+                {
+                    props.label && <label for="exampleInputEmail1">{props.label}</label>
+                }
                 <input 
                     type={props.type}
                     label={props.label}

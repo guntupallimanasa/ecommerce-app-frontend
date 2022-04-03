@@ -79,7 +79,7 @@ export const Products = (props) => {
       </thead>
       <tbody>
         {
-          product.products.length > 0 ? product.products.map(product => {
+          product.products.length >=0 ? product.products.map(product => {
             return <tr onClick={() => showProductDetailsModal(product)} key={product._id}>
               <td>1</td>
               <td>{product.name}</td>
