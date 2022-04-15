@@ -161,7 +161,6 @@ export const Page = (props) => {
         </NewModal>)
     }
 
-    console.log('>>>.categories>>>>>',categories)
     return (
         <Layout sidebar>
             {

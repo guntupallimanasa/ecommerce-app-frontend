@@ -38,7 +38,6 @@ export const addCategory = (form) => {
 
         try {
             const res = await axios.post(`/category/create`, form)
-            console.log('>>>>res', res)
             if (res.status === 201) {
                 const { category } = res.data;
                 dispatch({

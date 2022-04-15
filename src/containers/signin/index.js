@@ -30,7 +30,6 @@ export const SignIn = (props) => {
     }
 
     if(auth.authReducer.authenticate){
-        console.log('>>> inside if');
         return <Redirect to = {'/'}/>
     }
 
